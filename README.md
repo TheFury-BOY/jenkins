@@ -4,8 +4,8 @@
 
 Basé sur **JenkinsCI** et **Docker**.
 <div style="text-align:center">
-    <img src="./assets/images/jenkins_logo.png" alt="Jenkins" style="width:30%">
-    <img src="./assets/images/docker-logo.png" alt="Docker" style="width:50%">
+    <img src="./assets/images/jenkins_logo.png" alt="Jenkins" style="width:30vw">
+    <img src="./assets/images/docker-logo.png" alt="Docker" style="width:50vw">
 </div>
 
 ***
