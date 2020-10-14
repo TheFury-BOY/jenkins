@@ -9,22 +9,24 @@ services:
       - 2376
     volumes:
       - ./docker/jenkins_data:/var/jenkins_home
+    restart: always
   jenkins:
     build: ./docker
     environment:
       DOCKER_HOST: tcp://dind:2375
     ports:
-      - 8080:8080
-      - 50000:50000
+      - ${JENKINS_MASTER_PORT-1234}:8080
+      - ${JENKINS_SLAVE_PORT-50000}:50000
     links:
       - dind
     volumes:
       - ./docker/jenkins_data:/var/jenkins_home
       - ${PROJECT_VOLUME:-.}:/home/project
+    restart: always
   node_php:
     image: jenkins/jnlp-slave
     environment:
-      JENKINS_URL: http://192.168.30.2:8080
+      JENKINS_URL: http://localhost:1234
       JENKINS_SECRET: b22822b28904b1c35897478cc53d9dc647d498bfbd0eaf3ade71742deb9dc9d3
       JENKINS_AGENT_NAME: Node_PHP
       JENKINS_AGENT_WORKDIR: /home/jenkins

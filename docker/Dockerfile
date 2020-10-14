@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins:lts
+FROM jenkinsci/jenkins:latest
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
 RUN apt-get update \

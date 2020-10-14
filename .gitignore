@@ -1,1 +1,2 @@
 .env
+/docker/jenkins_data/*
